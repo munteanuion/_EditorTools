@@ -8,5 +8,7 @@
     "name": "munteanuion",
     "url": "https://github.com/munteanuion/_EditorTools"
   },
-  "dependencies": {}
+  "dependencies": {
+    "com.github.deadcows.mybox": "https://github.com/Deadcows/MyBox.git#master"
+  }
 }
