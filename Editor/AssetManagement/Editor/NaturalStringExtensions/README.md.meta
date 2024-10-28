@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: c145390c10e770d47810f9e4c949fa9d
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 169933
+  packageName: Scenes In Project
+  packageVersion: 1.3.4
+  assetPath: Assets/DevLocker/Tools/AssetManagement/Editor/NaturalStringExtensions/README.md
+  uploadId: 681356

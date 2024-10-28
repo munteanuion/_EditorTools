@@ -41,7 +41,7 @@ public class AdjustWindowsSize : EditorWindow
     [UnityEditor.Callbacks.DidReloadScripts]
     private static void AdjustProjectProjectWindowSizeReloadDomain()
     {
-        AdjustProjectWindowSize(windowBrowserName, true);   
+        //AdjustProjectWindowSize(windowBrowserName, true);   
     }
 
 

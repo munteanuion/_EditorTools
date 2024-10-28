@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 5d1a2f0d45121284ba7e7b8b3b0752ee
+AssemblyDefinitionImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 169933
+  packageName: Scenes In Project
+  packageVersion: 1.3.4
+  assetPath: Assets/DevLocker/Tools/AssetManagement/DevLocker.Tools.AssetManagement.asmdef
+  uploadId: 681356

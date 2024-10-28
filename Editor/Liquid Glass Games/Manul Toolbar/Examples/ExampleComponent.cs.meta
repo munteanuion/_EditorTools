@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 308662f86261e3a4d8d899a187aa93b5
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 278332
+  packageName: MANUL Toolbar
+  packageVersion: 1.3.3
+  assetPath: Assets/Liquid Glass Games/Manul Toolbar/Examples/ExampleComponent.cs
+  uploadId: 685723

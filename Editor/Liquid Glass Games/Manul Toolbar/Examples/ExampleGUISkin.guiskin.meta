@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 47977708799c0594ca557ad8ff213791
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 278332
+  packageName: MANUL Toolbar
+  packageVersion: 1.3.3
+  assetPath: Assets/Liquid Glass Games/Manul Toolbar/Examples/ExampleGUISkin.guiskin
+  uploadId: 685723
