@@ -9,6 +9,6 @@
     "url": "https://github.com/munteanuion/_EditorTools"
   },
   "dependencies": {
-    "com.github.deadcows.mybox": "https://github.com/Deadcows/MyBox.git#master"
+    
   }
 }
