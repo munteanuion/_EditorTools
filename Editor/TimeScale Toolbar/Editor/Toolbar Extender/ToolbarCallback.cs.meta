@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3140fcf91e0259247b57ad8e51a41e28
+guid: f2eaff03c4e7f8042a8172c79baabbbf
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
@@ -11,8 +11,8 @@ MonoImporter:
   assetBundleVariant: 
 AssetOrigin:
   serializedVersion: 1
-  productId: 278332
-  packageName: MANUL Toolbar
-  packageVersion: 1.3.3
-  assetPath: Assets/Liquid Glass Games/Manul Toolbar/Examples/ExampleType.cs
-  uploadId: 685723
+  productId: 291564
+  packageName: TimeScale Toolbar
+  packageVersion: 1.1
+  assetPath: Assets/bl4st/TimeScale Toolbar/Editor/Toolbar Extender/ToolbarCallback.cs
+  uploadId: 691791
