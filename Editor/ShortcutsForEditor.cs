@@ -90,26 +90,47 @@ namespace Plugins._EditorTools.Editor
         
         
         
-        // Setează calea completă a fișierului de layout
-        private static readonly string animationLayoutPath = "Packages/com.munteanuion._editor_tools/Editor/EditAnimation.wlt";
-        private static readonly string unrealLayoutPath = "Packages/com.munteanuion._editor_tools/Editor/Unreal.wlt";
-        private static bool toggleLayout;
+    private static bool toggleLayout;
 
-        // Încarcă layout-ul specificat prin combinația de taste Shift + Alt + L
-        [MenuItem("Tools/Switch to Custom Layout _&A")] // Shortcut: Shift + Alt + L
-        private static void SwitchToCustomLayout()
+    // Încarcă layout-ul specificat prin combinația de taste Alt + A
+    [MenuItem("Tools/Shortcuts/Switch Between Two Layout _&S")]
+    private static void SwitchToCustomLayout()
+    {
+        // Dacă toggle este fals, atunci salvăm layout-ul curent înainte de a comuta la animation layout
+        if (!toggleLayout)
         {
-            if (File.Exists(toggleLayout ? animationLayoutPath : unrealLayoutPath))
-            {
-                EditorUtility.LoadWindowLayout(toggleLayout ? animationLayoutPath : unrealLayoutPath);
-                toggleLayout = !toggleLayout;
-                Debug.Log("Layout-ul personalizat a fost încărcat cu succes.");
-            }
-            else
-            {
-                Debug.LogError("Fișierul de layout nu a fost găsit. Verifică calea specificată.");
-            }
+            EditorApplication.ExecuteMenuItem("Window/Layouts/Save Layout...");
+            SimulateEnterKey();
+
+            EditorApplication.ExecuteMenuItem("Window/Layouts/Tall");
         }
+        else
+        {
+            EditorApplication.ExecuteMenuItem("Window/Layouts/Save Layout...");
+            SimulateEnterKey();
+            
+            EditorApplication.ExecuteMenuItem("Window/Layouts/Default");
+        }
+
+        // Schimbăm starea toggle-ului pentru a alterna între cele două layout-uri
+        toggleLayout = !toggleLayout;
+    }
+
+    private static void SimulateEnterKey()
+    {
+        // Creăm un eveniment de tastatură de tip Enter
+        Event enterEvent = new Event
+        {
+            type = EventType.KeyDown,
+            keyCode = KeyCode.Return // Return este pentru Enter
+        };
+
+        // Trimitem evenimentul la fereastra activă
+        EditorWindow.focusedWindow.SendEvent(enterEvent);
+
+        Debug.Log("Am trimis evenimentul Enter către fereastra activă.");
+    }
+    
         
         
         
