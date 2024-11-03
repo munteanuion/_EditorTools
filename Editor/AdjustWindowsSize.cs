@@ -32,7 +32,7 @@ public class AdjustWindowsSize : EditorWindow
 
 
 
-    [MenuItem("Tools/Toggle Size Project Window #z")] // shift + z
+    [MenuItem("Tools/Shortcuts/Toggle Size Project Window #z")] // shift + z
     private static void AdjustProjectProjectWindowSize()
     {
         AdjustProjectWindowSize(windowBrowserName); 

@@ -78,7 +78,7 @@ namespace Plugins._EditorTools.Editor
 
         
         // Execute Assets > Properties using Alt + E
-        [MenuItem("Tools/Show Properties _&E")] // Shortcut: Alt + E
+        [MenuItem("Tools/Shortcuts/Show Properties _&E")] // Shortcut: Alt + E
         private static void ShowProperties()
         {
             // Execute "Assets > Properties" from the main menu
