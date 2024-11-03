@@ -1,4 +1,5 @@
-﻿using System.Reflection;
+﻿using System.IO;
+using System.Reflection;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
@@ -84,6 +85,30 @@ namespace Plugins._EditorTools.Editor
             // Execute "Assets > Properties" from the main menu
             EditorApplication.ExecuteMenuItem("Assets/Properties...");
         }
+        
+        
+        
+        
+        
+        // Setează calea completă a fișierului de layout
+        //private static readonly string customLayoutPath = "Packages/_EditorTools/Editor/EditAnimation.wlt";
+        private static readonly string customLayoutPath = "Assets/Plugins/_EditorTools/Editor/EditAnimation.wlt";
+
+        // Încarcă layout-ul specificat prin combinația de taste Shift + Alt + L
+        [MenuItem("Tools/Switch to Custom Layout _#&L")] // Shortcut: Shift + Alt + L
+        private static void SwitchToCustomLayout()
+        {
+            if (File.Exists(customLayoutPath))
+            {
+                EditorUtility.LoadWindowLayout(customLayoutPath);
+                Debug.Log("Layout-ul personalizat a fost încărcat cu succes.");
+            }
+            else
+            {
+                Debug.LogError("Fișierul de layout nu a fost găsit. Verifică calea specificată.");
+            }
+        }
+        
         
         
         
