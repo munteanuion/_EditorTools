@@ -91,16 +91,18 @@ namespace Plugins._EditorTools.Editor
         
         
         // Setează calea completă a fișierului de layout
-        //private static readonly string customLayoutPath = "Packages/_EditorTools/Editor/EditAnimation.wlt";
-        private static readonly string customLayoutPath = "Assets/Plugins/_EditorTools/Editor/EditAnimation.wlt";
+        private static readonly string animationLayoutPath = "Packages/com.munteanuion._editor_tools/Editor/EditAnimation.wlt";
+        private static readonly string unrealLayoutPath = "Packages/com.munteanuion._editor_tools/Editor/Unreal.wlt";
+        private static bool toggleLayout;
 
         // Încarcă layout-ul specificat prin combinația de taste Shift + Alt + L
-        [MenuItem("Tools/Switch to Custom Layout _#&L")] // Shortcut: Shift + Alt + L
+        [MenuItem("Tools/Switch to Custom Layout _&A")] // Shortcut: Shift + Alt + L
         private static void SwitchToCustomLayout()
         {
-            if (File.Exists(customLayoutPath))
+            if (File.Exists(toggleLayout ? animationLayoutPath : unrealLayoutPath))
             {
-                EditorUtility.LoadWindowLayout(customLayoutPath);
+                EditorUtility.LoadWindowLayout(toggleLayout ? animationLayoutPath : unrealLayoutPath);
+                toggleLayout = !toggleLayout;
                 Debug.Log("Layout-ul personalizat a fost încărcat cu succes.");
             }
             else
