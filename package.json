@@ -1,6 +1,6 @@
 {
   "name": "com.munteanuion._editor_tools",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "displayName": "_Editor_Tools",
   "description": "Support Telegram: @MunteanuIon. \n\n_Editor_Tools",
   "unity": "2021.3",
@@ -9,6 +9,7 @@
     "url": "https://github.com/munteanuion/_EditorTools"
   },
   "dependencies": {
+    "com.unity.editorcoroutines": "1.0.0",
     "com.unity.nuget.newtonsoft-json": "3.2.1",
     "com.unity.animation.rigging": "1.3.0"
   }
