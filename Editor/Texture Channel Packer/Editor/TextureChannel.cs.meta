@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 22e2af9fa430f2944a573a87d5f0c1fa
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 211507
+  packageName: Texture Channel Packer Pro
+  packageVersion: 1.0.0
+  assetPath: Assets/Asset Packs/Texture Channel Packer/Editor/TextureChannel.cs
+  uploadId: 475637

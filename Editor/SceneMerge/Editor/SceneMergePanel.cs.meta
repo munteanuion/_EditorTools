@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 679a87e11e9124c40939736f5e1b68c2
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 5412
+  packageName: Scene Merge
+  packageVersion: 1.7
+  assetPath: Assets/SceneMerge/Editor/SceneMergePanel.cs
+  uploadId: 2418

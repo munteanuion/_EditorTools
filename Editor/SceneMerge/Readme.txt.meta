@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 5fc1c5e565e92c94ab0c0b9a8f9530ad
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 5412
+  packageName: Scene Merge
+  packageVersion: 1.7
+  assetPath: Assets/SceneMerge/Readme.txt
+  uploadId: 2418

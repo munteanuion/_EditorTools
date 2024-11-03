@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: b93d0f143cc7f694d9ca171b8d185190
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 167342
+  packageName: Selection Identity tool
+  packageVersion: 1.0
+  assetPath: Assets/Selection_Identity_Tool/Editor/NameTheItemTool.cs
+  uploadId: 367712
