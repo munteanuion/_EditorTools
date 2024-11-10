@@ -7,7 +7,7 @@ namespace Assets.__Project.Scripts.UI
     {
         public Image Image;
         public SpriteChangerSettingsUI SpriteData;
-        public bool RuntimeSetOnStart = false;
+        public bool RuntimeSetOnStart = true;
 
         
 
