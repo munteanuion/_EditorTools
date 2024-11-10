@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 16e309ddf2ca4c542b62bf620a5466f8
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 257205
+  packageName: Missing Reference Finder
+  packageVersion: 1.0
+  assetPath: Assets/Missing Reference Finder/Demo.unity
+  uploadId: 609593

@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: fac0e899eeb1c0544bb6d6d6d6aa5ef3
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 282751
+  packageName: UI Toolkit Element Linker
+  packageVersion: 2.0.0
+  assetPath: Assets/D.A. Assets/UITK-Element-Linker/Runtime/Components/UitkHelpBox.cs
+  uploadId: 706130

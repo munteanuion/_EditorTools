@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: e54d43696e8c51446bf20d7267b1db6c
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 282751
+  packageName: UI Toolkit Element Linker
+  packageVersion: 2.0.0
+  assetPath: Assets/D.A. Assets/UITK-Element-Linker/Editor/ScriptGeneratorEditor.cs
+  uploadId: 706130

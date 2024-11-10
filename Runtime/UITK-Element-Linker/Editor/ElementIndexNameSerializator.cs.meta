@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 317e37ff94caa0340ade0ec7d4f79792
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 282751
+  packageName: UI Toolkit Element Linker
+  packageVersion: 2.0.0
+  assetPath: Assets/D.A. Assets/UITK-Element-Linker/Editor/ElementIndexNameSerializator.cs
+  uploadId: 706130

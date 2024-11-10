@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: cb35f6747a7851e4181abf9f6d99412e
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 282751
+  packageName: UI Toolkit Element Linker
+  packageVersion: 2.0.0
+  assetPath: Assets/D.A. Assets/UITK-Element-Linker/Runtime/Components/UitkBoundsIntField.cs
+  uploadId: 706130

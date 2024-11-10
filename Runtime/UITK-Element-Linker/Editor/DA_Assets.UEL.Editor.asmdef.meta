@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: cad72a16780d00e4b9ccc0e966d85404
+AssemblyDefinitionImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 282751
+  packageName: UI Toolkit Element Linker
+  packageVersion: 2.0.0
+  assetPath: Assets/D.A. Assets/UITK-Element-Linker/Editor/DA_Assets.UEL.Editor.asmdef
+  uploadId: 706130

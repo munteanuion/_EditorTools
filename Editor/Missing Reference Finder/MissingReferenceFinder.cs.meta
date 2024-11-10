@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: d389bc344cc6b8145aac8343f00f577c
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 257205
+  packageName: Missing Reference Finder
+  packageVersion: 1.0
+  assetPath: Assets/Missing Reference Finder/MissingReferenceFinder.cs
+  uploadId: 609593

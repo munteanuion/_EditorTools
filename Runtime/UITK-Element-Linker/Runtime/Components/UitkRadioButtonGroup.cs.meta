@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 264fbb491a6186f4ca0164ac08a8afd2
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 282751
+  packageName: UI Toolkit Element Linker
+  packageVersion: 2.0.0
+  assetPath: Assets/D.A. Assets/UITK-Element-Linker/Runtime/Components/UitkRadioButtonGroup.cs
+  uploadId: 706130
