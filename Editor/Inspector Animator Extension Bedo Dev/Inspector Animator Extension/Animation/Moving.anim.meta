@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 1774a414c4b8b1c4c91c4c66f24cf49b
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 283037
+  packageName: Animator Viewer Inspector
+  packageVersion: 1.0
+  assetPath: Assets/Bedo Dev/Inspector Animator Extension/Animation/Moving.anim
+  uploadId: 663603

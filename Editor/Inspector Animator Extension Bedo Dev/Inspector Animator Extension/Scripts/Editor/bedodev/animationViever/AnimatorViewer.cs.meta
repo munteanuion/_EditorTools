@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 14153202a1a44c24792ca364a13db52d
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 283037
+  packageName: Animator Viewer Inspector
+  packageVersion: 1.0
+  assetPath: Assets/Bedo Dev/Inspector Animator Extension/Scripts/Editor/bedodev/animationViever/AnimatorViewer.cs
+  uploadId: 663603

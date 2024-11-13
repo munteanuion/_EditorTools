@@ -1,0 +1,1 @@
+Add animator component and runtime animator controller to animator component and press play click model and preview your animations on animation list

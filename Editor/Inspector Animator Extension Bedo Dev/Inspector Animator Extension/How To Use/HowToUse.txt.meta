@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: d82926b027048fa438340e00232d3a31
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 283037
+  packageName: Animator Viewer Inspector
+  packageVersion: 1.0
+  assetPath: Assets/Bedo Dev/Inspector Animator Extension/How To Use/HowToUse.txt
+  uploadId: 663603
