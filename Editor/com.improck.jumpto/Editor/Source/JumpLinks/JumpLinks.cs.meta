@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: b25fde350f91a3045b315ac6800a6a6a
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 23211
+  packageName: 'JumpTo: A Favorites Tool'
+  packageVersion: v2.0
+  assetPath: Packages/com.improck.jumpto/Editor/Source/JumpLinks/JumpLinks.cs
+  uploadId: 637877

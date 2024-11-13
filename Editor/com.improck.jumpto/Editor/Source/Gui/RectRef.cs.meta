@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 6a45d9dc3032f8841a427c12c036da2a
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 23211
+  packageName: 'JumpTo: A Favorites Tool'
+  packageVersion: v2.0
+  assetPath: Packages/com.improck.jumpto/Editor/Source/Gui/RectRef.cs
+  uploadId: 637877

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 5ef2a92d9ec215c4a94b3d4d5e425145
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 23211
+  packageName: 'JumpTo: A Favorites Tool'
+  packageVersion: v2.0
+  assetPath: Packages/com.improck.jumpto/Editor/Lang/jumptolang_en.txt
+  uploadId: 637877

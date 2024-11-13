@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 2f43d5fe782ee404d96779fba969b1fa
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 23211
+  packageName: 'JumpTo: A Favorites Tool'
+  packageVersion: v2.0
+  assetPath: Packages/com.improck.jumpto/Editor/Source/Serialization/FileFormat.cs
+  uploadId: 637877

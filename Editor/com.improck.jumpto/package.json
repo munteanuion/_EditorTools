@@ -1,0 +1,21 @@
+{
+  "name": "com.improck.jumpto",
+  "version": "2.1.0",
+  "displayName": "Imp Rock - JumpTo",
+  "description": "A favorites tool for Unity",
+  "unity": "2018.3",
+  "documentationUrl": "https://www.improck.com/jumpto2-0/",
+  "keywords": [
+    "improck",
+    "shortcut",
+    "favorite",
+    "bookmark"
+  ],
+  "author": {
+    "name": "Imp Rock",
+    "url": "https://improck.com"
+  },
+  "contributors": {
+    "name": "Dean Lackey", "email": "dean@improck.com"
+  }
+}

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 772f66aac496af546ba1f94c5f10ea99
+PackageManifestImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 23211
+  packageName: 'JumpTo: A Favorites Tool'
+  packageVersion: v2.0
+  assetPath: Packages/com.improck.jumpto/package.json
+  uploadId: 637877

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: d9ae73581b20320499821a0e8f955fdd
+AssemblyDefinitionImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 23211
+  packageName: 'JumpTo: A Favorites Tool'
+  packageVersion: v2.0
+  assetPath: Packages/com.improck.jumpto/Editor/ImpRock.JumpTo.Editor.asmdef
+  uploadId: 637877

@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: c5cfeb5cfe5cb0c4788e8fa46ff435c6
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 23211
+  packageName: 'JumpTo: A Favorites Tool'
+  packageVersion: v2.0
+  assetPath: Packages/com.improck.jumpto/Editor/Source/Gui/JumpToEditorWindow.cs
+  uploadId: 637877
