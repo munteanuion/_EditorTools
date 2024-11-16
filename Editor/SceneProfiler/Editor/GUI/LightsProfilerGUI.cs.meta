@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: d3149fdc30ae8db4080148f195468750
+timeCreated: 1720116329
+AssetOrigin:
+  serializedVersion: 1
+  productId: 289799
+  packageName: Scene Profiler
+  packageVersion: 1.0
+  assetPath: Assets/SceneProfiler/Editor/GUI/LightsProfilerGUI.cs
+  uploadId: 682695

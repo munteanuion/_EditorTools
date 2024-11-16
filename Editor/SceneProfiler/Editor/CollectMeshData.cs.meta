@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 187312d40d8d09b42ac7110b61d091f0
+timeCreated: 1720313934
+AssetOrigin:
+  serializedVersion: 1
+  productId: 289799
+  packageName: Scene Profiler
+  packageVersion: 1.0
+  assetPath: Assets/SceneProfiler/Editor/CollectMeshData.cs
+  uploadId: 682695

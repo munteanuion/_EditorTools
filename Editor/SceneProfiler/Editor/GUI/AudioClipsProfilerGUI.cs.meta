@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 06427f57560f09d4a9708dff8969264d
+timeCreated: 1720202265
+AssetOrigin:
+  serializedVersion: 1
+  productId: 289799
+  packageName: Scene Profiler
+  packageVersion: 1.0
+  assetPath: Assets/SceneProfiler/Editor/GUI/AudioClipsProfilerGUI.cs
+  uploadId: 682695

@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: fa5bd73e452f4404d94210de608dad94
+timeCreated: 1720123653
+AssetOrigin:
+  serializedVersion: 1
+  productId: 289799
+  packageName: Scene Profiler
+  packageVersion: 1.0
+  assetPath: Assets/SceneProfiler/Editor/GUI/TexturesProfilerGUI.cs
+  uploadId: 682695

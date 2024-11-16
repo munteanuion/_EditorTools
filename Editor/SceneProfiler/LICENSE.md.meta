@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: ac68082e1ee88424c97689cc054a0105
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 289799
+  packageName: Scene Profiler
+  packageVersion: 1.0
+  assetPath: Assets/SceneProfiler/LICENSE.md
+  uploadId: 682695

@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 14b216fd6ddd1f548a71cbe57b73f424
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 289799
+  packageName: Scene Profiler
+  packageVersion: 1.0
+  assetPath: Assets/SceneProfiler/Editor/GUI/SceneProfilerGUI.cs
+  uploadId: 682695

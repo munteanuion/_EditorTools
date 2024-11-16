@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: d5f0b0a5daf9d8d4583a188fcae57a97
+timeCreated: 1720314048
+AssetOrigin:
+  serializedVersion: 1
+  productId: 289799
+  packageName: Scene Profiler
+  packageVersion: 1.0
+  assetPath: Assets/SceneProfiler/Editor/CollectParticleSystemData.cs
+  uploadId: 682695

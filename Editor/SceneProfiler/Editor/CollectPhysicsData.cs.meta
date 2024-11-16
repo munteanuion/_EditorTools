@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: b107f598f38069c49883a6dbd40867e8
+timeCreated: 1720314064
+AssetOrigin:
+  serializedVersion: 1
+  productId: 289799
+  packageName: Scene Profiler
+  packageVersion: 1.0
+  assetPath: Assets/SceneProfiler/Editor/CollectPhysicsData.cs
+  uploadId: 682695

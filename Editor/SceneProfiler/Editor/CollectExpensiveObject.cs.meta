@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 514c097f73434943a73f5c56b63d1802
+timeCreated: 1720990995
+AssetOrigin:
+  serializedVersion: 1
+  productId: 289799
+  packageName: Scene Profiler
+  packageVersion: 1.0
+  assetPath: Assets/SceneProfiler/Editor/CollectExpensiveObject.cs
+  uploadId: 682695

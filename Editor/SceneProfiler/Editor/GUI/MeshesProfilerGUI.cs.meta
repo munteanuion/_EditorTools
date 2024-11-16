@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: d6f96b880d4802a4ca8e8dc321974c45
+timeCreated: 1720199301
+AssetOrigin:
+  serializedVersion: 1
+  productId: 289799
+  packageName: Scene Profiler
+  packageVersion: 1.0
+  assetPath: Assets/SceneProfiler/Editor/GUI/MeshesProfilerGUI.cs
+  uploadId: 682695

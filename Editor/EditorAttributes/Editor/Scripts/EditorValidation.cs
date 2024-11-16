@@ -29,7 +29,7 @@ namespace EditorAttributes.Editor
 		/// <summary>
 		/// Validates every asset and scene in the project
 		/// </summary>
-		[MenuItem("EditorValidation/Validate All")]
+		[MenuItem("Tools/EditorValidation/Validate All")]
 		public static void ValidateAll()
 		{
 			ValidateAllAssets();
@@ -39,7 +39,7 @@ namespace EditorAttributes.Editor
 		/// <summary>
 		/// Validates all scenes in the project
 		/// </summary>
-		[MenuItem("EditorValidation/Validate Scenes")]
+		[MenuItem("Tools/EditorValidation/Validate Scenes")]
 		public static void ValidateAllScenes()
 		{
 			int failedValidations = 0;
@@ -68,7 +68,7 @@ namespace EditorAttributes.Editor
 		/// <summary>
 		/// Validates all assets in the project
 		/// </summary>
-		[MenuItem("EditorValidation/Validate Assets")]
+		[MenuItem("Tools/EditorValidation/Validate Assets")]
 		public static void ValidateAllAssets()
 		{
 			int failedValidations = 0;

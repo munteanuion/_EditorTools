@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 6ac737456afebb64e89505e705c10c94
+timeCreated: 1720793279
+AssetOrigin:
+  serializedVersion: 1
+  productId: 289799
+  packageName: Scene Profiler
+  packageVersion: 1.0
+  assetPath: Assets/SceneProfiler/Editor/CollectWarningsData.cs
+  uploadId: 682695
