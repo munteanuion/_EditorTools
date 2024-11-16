@@ -1,9 +1,7 @@
 {
-    "name": "SceneMerge",
+    "name": "SceneProfiler",
     "rootNamespace": "",
-    "references": [
-        "GUID:343deaaf83e0cee4ca978e7df0b80d21"
-    ],
+    "references": [],
     "includePlatforms": [
         "Editor"
     ],
