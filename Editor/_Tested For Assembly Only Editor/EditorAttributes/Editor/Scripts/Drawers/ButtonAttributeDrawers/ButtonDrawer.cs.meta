@@ -13,6 +13,6 @@ AssetOrigin:
   serializedVersion: 1
   productId: 269285
   packageName: EditorAttributes
-  packageVersion: 2.4.1
-  assetPath: Assets/EditorAttributes/Editor/Scripts/Drawers/ButtonAttributeDrawers/ButtonDrawer.cs
-  uploadId: 702642
+  packageVersion: 2.5.0
+  assetPath: Assets/Plugins/_EditorTools/Editor/_Tested For Assembly Only Editor/EditorAttributes/Editor/Scripts/Drawers/ButtonAttributeDrawers/ButtonDrawer.cs
+  uploadId: 710985

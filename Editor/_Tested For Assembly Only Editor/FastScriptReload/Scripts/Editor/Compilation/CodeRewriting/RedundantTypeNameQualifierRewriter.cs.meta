@@ -6,5 +6,5 @@ AssetOrigin:
   productId: 239351
   packageName: Fast Script Reload
   packageVersion: 1.6.1
-  assetPath: Assets/FastScriptReload/Scripts/Editor/Compilation/CodeRewriting/RedundantTypeNameQualifierRewriter.cs
-  uploadId: 620977
+  assetPath: Assets/Plugins/_EditorTools/Editor/_Tested For Assembly Only Editor/FastScriptReload/Scripts/Editor/Compilation/CodeRewriting/RedundantTypeNameQualifierRewriter.cs
+  uploadId: 710802

@@ -264,6 +264,15 @@ Then you can right click on folder/file in project window and select 'Fast Scrip
 
 > Technically this adds another File Watcher behind the scenes, you can always adjust those on File Watchers tab. 
 
+### Custom file watcher implementation
+In some cases standard file default watcher API can cause issues. You can choose different file watcher implementations via 'Window -> Fast Script Reload -> Start Screen -> File Watchers -> File Watcher implementation'
+
+> DefaultUnity - on some editor versions it could be slow or not trigger at all
+> 
+> DirectWindowsApi - (experimental) uses Windows API directly, faster (symlinks not supported)
+>
+> CustomPolling - (experimental) watches files by manual polling for changes, slowest. Make sure to narrow down watchers scope to script folders
+
 ### [Live-Reload] Hot-Reload over Network
 With on-device build, your code changes will be distributed over the network in real-time.
 
@@ -596,7 +605,17 @@ Once breakpoint has been hit it'll stop asset from hot-reloading in that play-se
 Asset runs based on specific .NET functionality, IL2CPP builds will not be supported. Although as this is development workflow aid you can build your APK with Mono backend (android) and change later.
 
 ### Partial classes
-Partial classes are not yet supported
+Experimental support (on by default). Potentially could have some performance implications as it's file-read heavy in current state. Can be disabled in options if needed.
+
+Your partial class file needs to share name with actual class. eg
+`public class PartialClass`
+
+Needs to be in files
+**PartialClass**XYZ
+
+eg.
+- PartialClass.1.cs
+- PartialClass.2.cs
 
 ## FAQ
 ### How is this asset different than Live Script Reload?
@@ -682,6 +701,7 @@ That's a Unity setting and it does not change back when removing asset.
 > To change go to 'Edit -> Preferences -> Asset Pipeline -> Auto Refresh -> Enabled'
 
 ## Roadmap
+- add Mac silicon support
 - ~~add Mac/Linux support~~ (added with 1.1)
 - ~~add debugger support for hot-reloaded scripts~~ (added with 1.2)
 - ~~allow to add new fields (adjustable in Editor)~~ (added with 1.3)
