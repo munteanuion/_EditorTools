@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: c330e43649107d043a0c0bd8c956ca96
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 163736
+  packageName: Easy Texture Editor - Lite
+  packageVersion: 1.0.2
+  assetPath: Assets/Easy Texture Editor/Editor/TransformTool.cs
+  uploadId: 360513

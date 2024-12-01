@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: f49ffbb54d08ed942b0f9d986496e051
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 163736
+  packageName: Easy Texture Editor - Lite
+  packageVersion: 1.0.2
+  assetPath: Assets/Easy Texture Editor/Editor/TextureScale.cs
+  uploadId: 360513

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 8ff3a8bbe80296647ba50c573a7e980e
+ComputeShaderImporter:
+  externalObjects: {}
+  currentAPIMask: 4
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 163736
+  packageName: Easy Texture Editor - Lite
+  packageVersion: 1.0.2
+  assetPath: Assets/Easy Texture Editor/Resources/ETEComputeShader.compute
+  uploadId: 360513

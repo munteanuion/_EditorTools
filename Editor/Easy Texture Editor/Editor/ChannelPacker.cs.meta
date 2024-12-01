@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: e22d1842b39902646973df0fd8b731b0
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 163736
+  packageName: Easy Texture Editor - Lite
+  packageVersion: 1.0.2
+  assetPath: Assets/Easy Texture Editor/Editor/ChannelPacker.cs
+  uploadId: 360513

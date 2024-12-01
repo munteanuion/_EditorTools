@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 4e7e13245b5a27349ae949ae8649accc
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 163736
+  packageName: Easy Texture Editor - Lite
+  packageVersion: 1.0.2
+  assetPath: Assets/Easy Texture Editor/Editor/TGALoader.cs
+  uploadId: 360513
