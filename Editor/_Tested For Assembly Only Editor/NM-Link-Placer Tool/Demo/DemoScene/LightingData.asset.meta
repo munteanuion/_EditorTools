@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 85ee321ecc26eba409a4442d0c91f898
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 112000000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 223521
+  packageName: NavMesh Link Placer
+  packageVersion: 1.0.1
+  assetPath: Assets/TutaX1/NM-Link-Placer Tool/Demo/DemoScene/LightingData.asset
+  uploadId: 659136

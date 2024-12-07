@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: d0364ec43d82581418ddac7c2933fc85
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 223521
+  packageName: NavMesh Link Placer
+  packageVersion: 1.0.1
+  assetPath: Assets/TutaX1/NM-Link-Placer Tool/Demo/DemoScene.unity
+  uploadId: 659136

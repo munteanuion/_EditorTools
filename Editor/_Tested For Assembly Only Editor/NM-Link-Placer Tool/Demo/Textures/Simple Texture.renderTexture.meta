@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: b9b5a8fc5a599734dba09c26510ad7b3
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 8400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 223521
+  packageName: NavMesh Link Placer
+  packageVersion: 1.0.1
+  assetPath: Assets/TutaX1/NM-Link-Placer Tool/Demo/Textures/Simple Texture.renderTexture
+  uploadId: 659136

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 24b2741110404a84592e7894c4c2a1a1
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 223521
+  packageName: NavMesh Link Placer
+  packageVersion: 1.0.1
+  assetPath: Assets/TutaX1/NM-Link-Placer Tool/Demo/Materials/Building Material.mat
+  uploadId: 659136
