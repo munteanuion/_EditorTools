@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 71433c2606c370045a4718aa44512cff
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 302062
+  packageName: Missing Scripts Tool
+  packageVersion: 1.0.0
+  assetPath: Assets/Missing Scripts Tool/Scripts/MissingScriptWindow.cs
+  uploadId: 708731
