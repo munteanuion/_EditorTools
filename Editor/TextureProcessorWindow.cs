@@ -29,7 +29,10 @@ public class TextureProcessorWindow : EditorWindow
                 size = TextureSize._1024x1024,
                 compression = TextureCompression.Compressed,
                 compressionType = TextureCompressionType.Normal,
-                textureIsRead = TextureIsRead.Disabled
+                textureIsRead = TextureIsRead.Disabled,
+                sRGB = true,
+                alphaSource = TextureImporterAlphaSource.FromInput,
+                alphaIsTransparency = false
             };
         }
     }
@@ -41,17 +44,7 @@ public class TextureProcessorWindow : EditorWindow
         scrollPosition = EditorGUILayout.BeginScrollView(scrollPosition);
 
         GUILayout.Label("Descriere:", EditorStyles.boldLabel);
-        GUILayout.Label("Acest tool permite procesarea și ajustarea texturilor în proiectul tău Unity. \nPoți selecta mărimea texturilor și nivelul de compresie pentru a optimiza performanța și dimensiunea fișierelor texturilor.");
-
-        GUILayout.Label("Instrucțiuni de utilizare:", EditorStyles.boldLabel);
-        GUILayout.Label("1. Deschide fereastra Texture Processor din meniul Tools.");
-        GUILayout.Label("2. Introdu calea către mapa cu texturi în câmpul de mai jos.");
-        GUILayout.Label("3. Selectează mărimea dorită pentru texturi folosind dropdown-ul Size.");
-        GUILayout.Label("4. Selectează nivelul de compresie dorit pentru texturi folosind dropdown-ul Compression.");
-        GUILayout.Label("5. Dacă ai selectat Compression = Compressed, poți alege tipul de compresie folosind dropdown-ul Compression Type.");
-        GUILayout.Label("6. Apasă butonul Process Textures pentru a aplica setările selectate la toate texturile din mapa specificată.");
-
-        GUILayout.Space(10);
+        GUILayout.Label("Acest tool permite procesarea și ajustarea texturilor în proiectul tău Unity.");
 
         GUILayout.Label("Folder Path", EditorStyles.boldLabel);
         folderPath = EditorGUILayout.TextField("Path:", folderPath);
@@ -62,10 +55,13 @@ public class TextureProcessorWindow : EditorWindow
         {
             GUILayout.Label($"Settings for {type}:", EditorStyles.boldLabel);
 
-            textureSettings[type].skipTheseTextures = (bool)EditorGUILayout.Toggle("Skip These:", textureSettings[type].skipTheseTextures);
+            textureSettings[type].skipTheseTextures = EditorGUILayout.Toggle("Skip These:", textureSettings[type].skipTheseTextures);
             textureSettings[type].size = (TextureSize)EditorGUILayout.EnumPopup("Size:", textureSettings[type].size);
             textureSettings[type].compression = (TextureCompression)EditorGUILayout.EnumPopup("Compression:", textureSettings[type].compression);
             textureSettings[type].textureIsRead = (TextureIsRead)EditorGUILayout.EnumPopup("Is Readable:", textureSettings[type].textureIsRead);
+            textureSettings[type].sRGB = EditorGUILayout.Toggle("sRGB:", textureSettings[type].sRGB);
+            textureSettings[type].alphaSource = (TextureImporterAlphaSource)EditorGUILayout.EnumPopup("Alpha Source:", textureSettings[type].alphaSource);
+            textureSettings[type].alphaIsTransparency = EditorGUILayout.Toggle("Alpha Is Transparency:", textureSettings[type].alphaIsTransparency);
 
             if (textureSettings[type].compression == TextureCompression.Compressed)
             {
@@ -108,14 +104,16 @@ public class TextureProcessorWindow : EditorWindow
 
                     if (settings.skipTheseTextures) continue;
 
-                    textureImporter.isReadable = settings.textureIsRead == TextureIsRead.Enabled ? true : false;
+                    textureImporter.isReadable = settings.textureIsRead == TextureIsRead.Enabled;
                     textureImporter.maxTextureSize = (int)settings.size;
+                    textureImporter.sRGBTexture = settings.sRGB;
+                    textureImporter.alphaSource = settings.alphaSource;
+                    textureImporter.alphaIsTransparency = settings.alphaIsTransparency;
 
                     if (settings.compression == TextureCompression.Compressed)
                     {
                         textureImporter.textureCompression = TextureImporterCompression.Compressed;
                         textureImporter.compressionQuality = 50;
-
                         textureImporter.crunchedCompression = (settings.compressionType == TextureCompressionType.Crunch);
                     }
                     else
@@ -197,6 +195,9 @@ public class TextureProcessorWindow : EditorWindow
         public TextureCompression compression;
         public TextureCompressionType compressionType;
         public TextureIsRead textureIsRead;
+        public bool sRGB;
+        public TextureImporterAlphaSource alphaSource;
+        public bool alphaIsTransparency;
     }
 }
 #endif
