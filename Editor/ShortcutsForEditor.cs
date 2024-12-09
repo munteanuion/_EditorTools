@@ -13,6 +13,27 @@ namespace Plugins._EditorTools.Editor
 
 
         
+        [MenuItem("Tools/Shortcuts/Toggle Layer UI Visible _&U")]
+        private static void ToggleLayerVisibility()
+        {
+            string layerName = "UI";
+            
+            int layer = LayerMask.NameToLayer(layerName);
+
+            if (layer == -1)
+            {
+                Debug.LogError($"Layer \"{layerName}\" nu există!");
+                return;
+            }
+
+            // Obține masca curentă a vizibilității layer-urilor
+            SceneView sceneView = SceneView.lastActiveSceneView;
+            if (sceneView == null) return;
+
+            Tools.visibleLayers ^= (1 << layer); // Comută vizibilitatea layer-ului
+            SceneView.RepaintAll(); // Actualizează vizualizarea Scene
+        }
+        
 
         // Toggle maximize Game Window
         [MenuItem("Tools/Shortcuts/Toggle Maximize Game Window _&F")] // Shortcut: Alt + F
