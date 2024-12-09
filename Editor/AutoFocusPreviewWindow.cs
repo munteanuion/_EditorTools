@@ -43,13 +43,23 @@ public class AutoFocusPreviewWindow
     private static bool IsSelectionInHierarchy(Object selectedObject)
     {
         // Obiectele din Hierarchy sunt de obicei de tip GameObject
-        return selectedObject is GameObject && !AssetDatabase.Contains(selectedObject);
+        return selectedObject is GameObject && !AssetDatabaseContains(selectedObject);
     }
+    
+    private static bool AssetDatabaseContains(Object selectedObject)
+    {
+        // Obține calea asset-ului
+        string assetPath = AssetDatabase.GetAssetPath(selectedObject);
+    
+        // Verifică dacă calea este validă și nu este goală
+        return !string.IsNullOrEmpty(assetPath) && !AssetDatabase.IsValidFolder(assetPath);
+    }
+
 
     private static bool IsSelectionInProjectWindow(Object selectedObject)
     {
         // Verificăm dacă selecția vine din Project Browser
-        return AssetDatabase.Contains(selectedObject);
+        return AssetDatabaseContains(selectedObject);
     }
 
     private static bool IsFolder(Object selectedObject)
@@ -63,7 +73,6 @@ public class AutoFocusPreviewWindow
     {
         // Utilizează comanda din meniu pentru a focaliza pe Scene View
         EditorApplication.ExecuteMenuItem("Window/General/Scene");
-        Debug.Log("Focalizat pe Scene View.");
     }
 
     private static void FocusOnPreviewWindow()
@@ -72,7 +81,6 @@ public class AutoFocusPreviewWindow
         if (previewWindow != null)
         {
             previewWindow.Focus();
-            Debug.Log("Focalizat pe Preview Window.");
         }
     }
 }
