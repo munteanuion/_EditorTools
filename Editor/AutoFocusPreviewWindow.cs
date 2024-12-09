@@ -32,21 +32,31 @@ public class AutoFocusPreviewWindow
         // Verifică dacă selecția este din Project Browser
         if (IsSelectionInProjectWindow(selectedObject))
         {
-            // Focalizează pe Preview Window
-            FocusOnPreviewWindow();
+            // Focalizează pe Preview Window doar dacă nu este un folder
+            if (!IsFolder(selectedObject))
+            {
+                FocusOnPreviewWindow();
+            }
         }
     }
 
     private static bool IsSelectionInHierarchy(Object selectedObject)
     {
         // Obiectele din Hierarchy sunt de obicei de tip GameObject
-        return selectedObject is GameObject;
+        return selectedObject is GameObject && !AssetDatabase.Contains(selectedObject);
     }
 
     private static bool IsSelectionInProjectWindow(Object selectedObject)
     {
         // Verificăm dacă selecția vine din Project Browser
         return AssetDatabase.Contains(selectedObject);
+    }
+
+    private static bool IsFolder(Object selectedObject)
+    {
+        // Verifică dacă obiectul selectat este un folder
+        string path = AssetDatabase.GetAssetPath(selectedObject);
+        return AssetDatabase.IsValidFolder(path);
     }
 
     private static void FocusOnSceneView()
