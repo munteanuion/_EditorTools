@@ -7,6 +7,7 @@ public class TextureProcessorWindow : EditorWindow
 {
     private Vector2 scrollPosition = Vector2.zero;
     private string folderPath = "Assets/Textures";
+    private List<string> nameFilters = new List<string>(); // Listă pentru filtrarea după nume
 
     private Dictionary<TextureType, TextureSettings> textureSettings;
 
@@ -57,6 +58,26 @@ public class TextureProcessorWindow : EditorWindow
 
         GUILayout.Label("Folder Path", EditorStyles.boldLabel);
         folderPath = EditorGUILayout.TextField("Path:", folderPath);
+
+        GUILayout.Space(10);
+
+        // Secțiune pentru filtrul de nume
+        GUILayout.Label("Name Filters (macar una daca contine va procesa textura) ", EditorStyles.boldLabel);
+        if (GUILayout.Button("Add Filter"))
+        {
+            nameFilters.Add(""); // Adaugă un element gol în listă
+        }
+        for (int i = 0; i < nameFilters.Count; i++)
+        {
+            GUILayout.BeginHorizontal();
+            nameFilters[i] = EditorGUILayout.TextField($"Filter {i + 1}:", nameFilters[i]);
+            if (GUILayout.Button("Remove"))
+            {
+                nameFilters.RemoveAt(i);
+                i--; // Ajustează indexul pentru a preveni salturi
+            }
+            GUILayout.EndHorizontal();
+        }
 
         GUILayout.Space(10);
 
@@ -130,8 +151,14 @@ public class TextureProcessorWindow : EditorWindow
 
                 if (textureImporter != null)
                 {
-                    TextureType textureType = DetermineTextureType(textureImporter);
+                    string textureName = System.IO.Path.GetFileNameWithoutExtension(texturePath);
 
+                    // Verifică dacă numele texturii conține vreun cuvânt din filtru
+                    bool matchesFilter = nameFilters.Exists(filter => textureName.Contains(filter));
+
+                    if (!matchesFilter) continue; // Dacă nu trece filtrul, sari peste textură
+
+                    TextureType textureType = DetermineTextureType(textureImporter);
                     TextureSettings settings = textureSettings[textureType];
 
                     if (settings.skipTheseTextures) continue;
