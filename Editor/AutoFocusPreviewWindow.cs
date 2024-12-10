@@ -12,9 +12,7 @@ public class AutoFocusPreviewWindow
     private const string PROJECT = "Project";
     
     private static string lastOpenedWindow = "";
-    
-    
-    
+
     static AutoFocusPreviewWindow()
     {
         Selection.selectionChanged += OnSelectionChanged;
@@ -23,7 +21,6 @@ public class AutoFocusPreviewWindow
     private static void OnSelectionChanged()
     {
         Object selectedObject = Selection.activeObject;
-
         if (selectedObject == null) return;
 
         if (!EditorApplication.isPlaying)
@@ -35,12 +32,9 @@ public class AutoFocusPreviewWindow
             }
         }
 
-        if (IsSelectionInProjectWindow(selectedObject))
+        if (IsSelectionInProjectWindow(selectedObject) && !IsObjectForPreview(selectedObject))
         {
-            if (!IsObjectForPreview(selectedObject))
-            {
-                FocusOnPreviewWindow();
-            }
+            FocusOnPreviewWindow();
         }
     }
 
@@ -48,57 +42,38 @@ public class AutoFocusPreviewWindow
     {
         return selectedObject is GameObject && !AssetDatabaseContains(selectedObject);
     }
-    
+
     private static bool AssetDatabaseContains(Object selectedObject)
     {
         string assetPath = AssetDatabase.GetAssetPath(selectedObject);
-    
         return !string.IsNullOrEmpty(assetPath) && !AssetDatabase.IsValidFolder(assetPath);
     }
 
-
     private static bool IsSelectionInProjectWindow(Object selectedObject)
     {
-        EditorWindow focusedWindow = EditorWindow.focusedWindow;
-
-        return focusedWindow != null 
-               && focusedWindow.title == PROJECT 
-               && AssetDatabaseContains(selectedObject);
+        return EditorWindow.focusedWindow?.title == PROJECT && AssetDatabaseContains(selectedObject);
     }
 
     private static bool IsObjectForPreview(Object selectedObject)
     {
         string path = AssetDatabase.GetAssetPath(selectedObject);
 
-        bool previewFound = 
-            !AssetDatabase.IsValidFolder(path) // Nu este un folder
-            && AssetDatabaseContains(selectedObject) // Este un asset valid
-            && !(
-                selectedObject is GameObject
-                || selectedObject is AnimationClip
-                || selectedObject is Mesh
-                || selectedObject is AudioClip
-                || selectedObject is Texture
-                || selectedObject is Sprite
-                || selectedObject is Material
-                || path.EndsWith(".fbx", System.StringComparison.OrdinalIgnoreCase) // Este un fișier FBX
-            );
-
-        return previewFound;
+        return !AssetDatabase.IsValidFolder(path) 
+               && AssetDatabaseContains(selectedObject) 
+               && !(selectedObject is GameObject || selectedObject is AnimationClip || selectedObject is Mesh 
+                    || selectedObject is AudioClip || selectedObject is Texture || selectedObject is Sprite 
+                    || selectedObject is Material || path.EndsWith(".fbx", System.StringComparison.OrdinalIgnoreCase));
     }
 
     private static void FocusOnSceneView()
     {
-        if (IsYetOpenedWindow(SCENE))
-            return;
-        
+        if (IsYetOpenedWindow(SCENE)) return;
         EditorApplication.ExecuteMenuItem("Window/General/Scene");
     }
 
     private static void FocusOnPreviewWindow()
     {
-        if (IsYetOpenedWindow(PREVIEW))
-            return;
+        if (IsYetOpenedWindow(PREVIEW)) return;
         
         var previewWindow = EditorWindow.GetWindow(typeof(EditorWindow).Assembly.GetType("UnityEditor.PreviewWindow"));
         if (previewWindow != null)
@@ -110,9 +85,9 @@ public class AutoFocusPreviewWindow
     private static bool IsYetOpenedWindow(string windowTitle)
     {
         EditorWindow focusedWindow = EditorWindow.focusedWindow;
-        
-        bool focusedWindowPresent = focusedWindow != null 
-                                    && (!lastOpenedWindow.Equals(windowTitle) || lastOpenedWindow.Equals(""));
+
+        bool isFocusedWindowDifferent = focusedWindow != null 
+                                        && (!lastOpenedWindow.Equals(windowTitle) || lastOpenedWindow.Equals(""));
         
         if (windowTitle.Equals(PREVIEW))
         {
@@ -122,8 +97,8 @@ public class AutoFocusPreviewWindow
         {
             lastOpenedWindow = PREVIEW;
         }
-        
-        return focusedWindowPresent;
+
+        return isFocusedWindowDifferent;
     }
 }
 
