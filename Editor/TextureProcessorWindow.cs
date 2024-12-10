@@ -6,7 +6,7 @@ using System.Collections.Generic;
 public class TextureProcessorWindow : EditorWindow
 {
     private Vector2 scrollPosition = Vector2.zero;
-    private string folderPath = "Assets/Textures"; // Calea implicită
+    private string folderPath = "Assets/Textures";
 
     private Dictionary<TextureType, TextureSettings> textureSettings;
 
@@ -26,6 +26,15 @@ public class TextureProcessorWindow : EditorWindow
             textureSettings[type] = new TextureSettings
             {
                 skipTheseTextures = true,
+                propertiesToApply = new Dictionary<string, bool>
+                {
+                    { "Size", false },
+                    { "Compression", false },
+                    { "Readable", false },
+                    { "sRGB", false },
+                    { "Alpha Source", false },
+                    { "Alpha Is Transparency", false }
+                },
                 size = TextureSize._1024x1024,
                 compression = TextureCompression.Compressed,
                 compressionType = TextureCompressionType.Normal,
@@ -51,22 +60,33 @@ public class TextureProcessorWindow : EditorWindow
 
         GUILayout.Space(10);
 
-        foreach (TextureType type in System.Enum.GetValues(typeof(TextureType)))
+        foreach (TextureType type in new List<TextureType>(textureSettings.Keys))
         {
             GUILayout.Label($"Settings for {type}:", EditorStyles.boldLabel);
 
             textureSettings[type].skipTheseTextures = EditorGUILayout.Toggle("Skip These:", textureSettings[type].skipTheseTextures);
-            textureSettings[type].size = (TextureSize)EditorGUILayout.EnumPopup("Size:", textureSettings[type].size);
-            textureSettings[type].compression = (TextureCompression)EditorGUILayout.EnumPopup("Compression:", textureSettings[type].compression);
-            textureSettings[type].textureIsRead = (TextureIsRead)EditorGUILayout.EnumPopup("Is Readable:", textureSettings[type].textureIsRead);
-            textureSettings[type].sRGB = EditorGUILayout.Toggle("sRGB:", textureSettings[type].sRGB);
-            textureSettings[type].alphaSource = (TextureImporterAlphaSource)EditorGUILayout.EnumPopup("Alpha Source:", textureSettings[type].alphaSource);
-            textureSettings[type].alphaIsTransparency = EditorGUILayout.Toggle("Alpha Is Transparency:", textureSettings[type].alphaIsTransparency);
 
-            if (textureSettings[type].compression == TextureCompression.Compressed)
+            GUILayout.Label("Select Properties to Apply:", EditorStyles.boldLabel);
+            foreach (var key in new List<string>(textureSettings[type].propertiesToApply.Keys))
             {
-                textureSettings[type].compressionType = (TextureCompressionType)EditorGUILayout.EnumPopup("Compression Type:", textureSettings[type].compressionType);
+                textureSettings[type].propertiesToApply[key] = EditorGUILayout.Toggle(key, textureSettings[type].propertiesToApply[key]);
             }
+
+            GUILayout.Box("", GUILayout.ExpandWidth(true), GUILayout.Height(1));
+            GUILayout.Space(5);
+
+            if (textureSettings[type].propertiesToApply["Size"])
+                textureSettings[type].size = (TextureSize)EditorGUILayout.EnumPopup("Size:", textureSettings[type].size);
+            if (textureSettings[type].propertiesToApply["Compression"])
+                textureSettings[type].compression = (TextureCompression)EditorGUILayout.EnumPopup("Compression:", textureSettings[type].compression);
+            if (textureSettings[type].propertiesToApply["Readable"])
+                textureSettings[type].textureIsRead = (TextureIsRead)EditorGUILayout.EnumPopup("Is Readable:", textureSettings[type].textureIsRead);
+            if (textureSettings[type].propertiesToApply["sRGB"])
+                textureSettings[type].sRGB = EditorGUILayout.Toggle("sRGB:", textureSettings[type].sRGB);
+            if (textureSettings[type].propertiesToApply["Alpha Source"])
+                textureSettings[type].alphaSource = (TextureImporterAlphaSource)EditorGUILayout.EnumPopup("Alpha Source:", textureSettings[type].alphaSource);
+            if (textureSettings[type].propertiesToApply["Alpha Is Transparency"])
+                textureSettings[type].alphaIsTransparency = EditorGUILayout.Toggle("Alpha Is Transparency:", textureSettings[type].alphaIsTransparency);
 
             GUILayout.Space(10);
         }
@@ -83,14 +103,26 @@ public class TextureProcessorWindow : EditorWindow
 
     private void ProcessTextures(string folderPath)
     {
-        string[] textureGUIDs = AssetDatabase.FindAssets("t:Texture2D", new[] { folderPath });
-        int totalTextures = textureGUIDs.Length;
+        if (string.IsNullOrEmpty(folderPath) || !System.IO.Directory.Exists(folderPath))
+        {
+            Debug.LogError("Invalid folder path. Please provide a valid path.");
+            return;
+        }
 
-        AssetDatabase.StartAssetEditing(); // Start batching changes
+        string[] textureGUIDs = AssetDatabase.FindAssets("t:Texture2D", new[] { folderPath });
+        Debug.Log($"Found {textureGUIDs.Length} textures in folder: {folderPath}");
+
+        if (textureGUIDs.Length == 0)
+        {
+            Debug.LogWarning("No textures found in the specified folder.");
+            return;
+        }
+
+        AssetDatabase.StartAssetEditing();
 
         try
         {
-            for (int i = 0; i < totalTextures; i++)
+            for (int i = 0; i < textureGUIDs.Length; i++)
             {
                 string textureGUID = textureGUIDs[i];
                 string texturePath = AssetDatabase.GUIDToAssetPath(textureGUID);
@@ -104,44 +136,48 @@ public class TextureProcessorWindow : EditorWindow
 
                     if (settings.skipTheseTextures) continue;
 
-                    textureImporter.isReadable = settings.textureIsRead == TextureIsRead.Enabled;
-                    textureImporter.maxTextureSize = (int)settings.size;
-                    textureImporter.sRGBTexture = settings.sRGB;
-                    textureImporter.alphaSource = settings.alphaSource;
-                    textureImporter.alphaIsTransparency = settings.alphaIsTransparency;
+                    if (settings.propertiesToApply["Size"])
+                        textureImporter.maxTextureSize = (int)settings.size;
+                    if (settings.propertiesToApply["Readable"])
+                        textureImporter.isReadable = settings.textureIsRead == TextureIsRead.Enabled;
+                    if (settings.propertiesToApply["sRGB"])
+                        textureImporter.sRGBTexture = settings.sRGB;
+                    if (settings.propertiesToApply["Alpha Source"])
+                        textureImporter.alphaSource = settings.alphaSource;
+                    if (settings.propertiesToApply["Alpha Is Transparency"])
+                        textureImporter.alphaIsTransparency = settings.alphaIsTransparency;
 
-                    if (settings.compression == TextureCompression.Compressed)
+                    if (settings.propertiesToApply["Compression"])
                     {
-                        textureImporter.textureCompression = TextureImporterCompression.Compressed;
-                        textureImporter.compressionQuality = 50;
-                        textureImporter.crunchedCompression = (settings.compressionType == TextureCompressionType.Crunch);
-                    }
-                    else
-                    {
-                        textureImporter.textureCompression = TextureImporterCompression.Uncompressed;
+                        if (settings.compression == TextureCompression.Compressed)
+                        {
+                            textureImporter.textureCompression = TextureImporterCompression.Compressed;
+                            textureImporter.crunchedCompression = (settings.compressionType == TextureCompressionType.Crunch);
+                        }
+                        else
+                        {
+                            textureImporter.textureCompression = TextureImporterCompression.Uncompressed;
+                        }
                     }
 
-                    // Mark the importer as dirty and reimport the texture to apply changes
                     EditorUtility.SetDirty(textureImporter);
                     AssetDatabase.ImportAsset(texturePath, ImportAssetOptions.ForceUpdate);
                 }
 
-                // Update the progress bar
-                EditorUtility.DisplayProgressBar("Processing Textures", $"Processing texture {i + 1}/{totalTextures}", (float)i / totalTextures);
+                EditorUtility.DisplayProgressBar("Processing Textures", $"Processing texture {i + 1}/{textureGUIDs.Length}", (float)i / textureGUIDs.Length);
             }
         }
         finally
         {
-            AssetDatabase.StopAssetEditing(); // Stop batching changes
+            AssetDatabase.StopAssetEditing();
             AssetDatabase.SaveAssets();
-            EditorUtility.ClearProgressBar(); // Clear the progress bar
+            EditorUtility.ClearProgressBar();
             Debug.Log("Texture processing complete for folder: " + folderPath);
         }
     }
 
     private TextureType DetermineTextureType(TextureImporter importer)
     {
-        // Logic for determining texture type based on the importer
         if (importer.textureType == TextureImporterType.Sprite)
             return TextureType.UI;
         if (importer.textureType == TextureImporterType.NormalMap)
@@ -191,6 +227,7 @@ public class TextureProcessorWindow : EditorWindow
     private class TextureSettings
     {
         public bool skipTheseTextures = true;
+        public Dictionary<string, bool> propertiesToApply;
         public TextureSize size;
         public TextureCompression compression;
         public TextureCompressionType compressionType;
