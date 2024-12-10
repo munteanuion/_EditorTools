@@ -6,6 +6,15 @@ using UnityEngine;
 [InitializeOnLoad]
 public class AutoFocusPreviewWindow
 {
+    private const string HIERARCHY = "Hierarchy";
+    private const string SCENE = "Scene";
+    private const string PREVIEW = "Preview";
+    private const string PROJECT = "Project";
+    
+    private static string lastOpenedWindow = "";
+    
+    
+    
     static AutoFocusPreviewWindow()
     {
         Selection.selectionChanged += OnSelectionChanged;
@@ -13,15 +22,12 @@ public class AutoFocusPreviewWindow
 
     private static void OnSelectionChanged()
     {
-        // Obține obiectul selectat
         Object selectedObject = Selection.activeObject;
 
         if (selectedObject == null) return;
 
-        // Verifică dacă suntem în modul Play
         if (!EditorApplication.isPlaying)
         {
-            // Dacă obiectul provine din Hierarchy, focalizează pe Scene View
             if (IsSelectionInHierarchy(selectedObject))
             {
                 FocusOnSceneView();
@@ -29,11 +35,9 @@ public class AutoFocusPreviewWindow
             }
         }
 
-        // Verifică dacă selecția este din Project Browser
         if (IsSelectionInProjectWindow(selectedObject))
         {
-            // Focalizează pe Preview Window doar dacă nu este un folder
-            if (!IsFolder(selectedObject))
+            if (!IsObjectForPreview(selectedObject))
             {
                 FocusOnPreviewWindow();
             }
@@ -42,46 +46,84 @@ public class AutoFocusPreviewWindow
 
     private static bool IsSelectionInHierarchy(Object selectedObject)
     {
-        // Obiectele din Hierarchy sunt de obicei de tip GameObject
         return selectedObject is GameObject && !AssetDatabaseContains(selectedObject);
     }
     
     private static bool AssetDatabaseContains(Object selectedObject)
     {
-        // Obține calea asset-ului
         string assetPath = AssetDatabase.GetAssetPath(selectedObject);
     
-        // Verifică dacă calea este validă și nu este goală
         return !string.IsNullOrEmpty(assetPath) && !AssetDatabase.IsValidFolder(assetPath);
     }
 
 
     private static bool IsSelectionInProjectWindow(Object selectedObject)
     {
-        // Verificăm dacă selecția vine din Project Browser
-        return AssetDatabaseContains(selectedObject);
+        EditorWindow focusedWindow = EditorWindow.focusedWindow;
+
+        return focusedWindow != null 
+               && focusedWindow.title == PROJECT 
+               && AssetDatabaseContains(selectedObject);
     }
 
-    private static bool IsFolder(Object selectedObject)
+    private static bool IsObjectForPreview(Object selectedObject)
     {
-        // Verifică dacă obiectul selectat este un folder
         string path = AssetDatabase.GetAssetPath(selectedObject);
-        return AssetDatabase.IsValidFolder(path);
+
+        bool previewFound = 
+            !AssetDatabase.IsValidFolder(path) // Nu este un folder
+            && AssetDatabaseContains(selectedObject) // Este un asset valid
+            && !(
+                selectedObject is GameObject
+                || selectedObject is AnimationClip
+                || selectedObject is Mesh
+                || selectedObject is AudioClip
+                || selectedObject is Texture
+                || selectedObject is Sprite
+                || selectedObject is Material
+                || path.EndsWith(".fbx", System.StringComparison.OrdinalIgnoreCase) // Este un fișier FBX
+            );
+
+        return previewFound;
     }
 
     private static void FocusOnSceneView()
     {
-        // Utilizează comanda din meniu pentru a focaliza pe Scene View
+        if (IsYetOpenedWindow(SCENE))
+            return;
+        
         EditorApplication.ExecuteMenuItem("Window/General/Scene");
     }
 
     private static void FocusOnPreviewWindow()
     {
+        if (IsYetOpenedWindow(PREVIEW))
+            return;
+        
         var previewWindow = EditorWindow.GetWindow(typeof(EditorWindow).Assembly.GetType("UnityEditor.PreviewWindow"));
         if (previewWindow != null)
         {
             previewWindow.Focus();
         }
+    }
+
+    private static bool IsYetOpenedWindow(string windowTitle)
+    {
+        EditorWindow focusedWindow = EditorWindow.focusedWindow;
+        
+        bool focusedWindowPresent = focusedWindow != null 
+                                    && (!lastOpenedWindow.Equals(windowTitle) || lastOpenedWindow.Equals(""));
+        
+        if (windowTitle.Equals(PREVIEW))
+        {
+            lastOpenedWindow = SCENE;
+        }
+        else if (windowTitle.Equals(SCENE))
+        {
+            lastOpenedWindow = PREVIEW;
+        }
+        
+        return focusedWindowPresent;
     }
 }
 
