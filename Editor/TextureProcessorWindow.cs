@@ -153,10 +153,14 @@ public class TextureProcessorWindow : EditorWindow
                 {
                     string textureName = System.IO.Path.GetFileNameWithoutExtension(texturePath);
 
-                    // Verifică dacă numele texturii conține vreun cuvânt din filtru
-                    bool matchesFilter = nameFilters.Exists(filter => textureName.Contains(filter));
 
-                    if (!matchesFilter) continue; // Dacă nu trece filtrul, sari peste textură
+                    if (nameFilters.Count > 0)
+                    {
+                        // Verifică dacă numele texturii conține vreun cuvânt din filtru
+                        bool matchesFilter = nameFilters.Exists(filter => textureName.Contains(filter));
+
+                        if (!matchesFilter) continue; // Dacă nu trece filtrul, sari peste textură
+                    }
 
                     TextureType textureType = DetermineTextureType(textureImporter);
                     TextureSettings settings = textureSettings[textureType];
