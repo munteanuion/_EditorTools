@@ -134,16 +134,11 @@ namespace bedodev.animationViever
                             EditorGUILayout.BeginHorizontal();
                             EditorGUILayout.LabelField("Frame Slider", GUILayout.Width(75));
                             currentFrameSliderValue = EditorGUILayout.Slider((int)currentFrameSliderValue, 0f, (int)totalFrames, GUILayout.ExpandWidth(true));
-                            if (true) JumpToFrame(animator, selectedClip, currentFrameSliderValue);
-                            /*if (GUILayout.Button("Jump to Frame"))
+                            if (GUILayout.Button("Jump to Frame"))
                             {
                                 JumpToFrame(animator, selectedClip, currentFrameSliderValue);
-                            }*/
+                            }
                             EditorGUILayout.EndHorizontal();
-                        }
-                        else
-                        {
-                            currentFrameSliderValue = currentFrame;
                         }
                     }
 

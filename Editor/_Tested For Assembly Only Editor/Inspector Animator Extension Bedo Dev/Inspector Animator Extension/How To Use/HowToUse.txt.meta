@@ -10,5 +10,6 @@ AssetOrigin:
   productId: 283037
   packageName: Animator Viewer Inspector
   packageVersion: 1.0
-  assetPath: Assets/Bedo Dev/Inspector Animator Extension/How To Use/HowToUse.txt
+  assetPath: Assets/Plugins/_EditorTools/Editor/_Tested For Assembly Only Editor/Inspector
+    Animator Extension Bedo Dev/Inspector Animator Extension/How To Use/HowToUse.txt
   uploadId: 663603
