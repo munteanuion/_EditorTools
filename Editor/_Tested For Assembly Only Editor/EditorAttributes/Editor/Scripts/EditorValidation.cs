@@ -30,7 +30,7 @@ namespace EditorAttributes.Editor
 		/// <summary>
 		/// Validates every asset and scene in the project
 		/// </summary>
-		[MenuItem("Tools/EditorValidation/Validate All", priority = 0)]
+		[MenuItem("EditorValidation/Validate All", priority = 0)]
 		public static void ValidateAll()
 		{
 			ValidateAllAssets();
@@ -40,7 +40,7 @@ namespace EditorAttributes.Editor
 		/// <summary>
 		/// Validates all scenes in the build
 		/// </summary>
-		[MenuItem("Tools/EditorValidation/Validate Scenes", priority = 2)]
+		[MenuItem("EditorValidation/Validate Scenes", priority = 2)]
 		public static void ValidateAllScenes()
 		{
 			int failedValidations = 0;
@@ -71,7 +71,7 @@ namespace EditorAttributes.Editor
 		/// <summary>
 		/// Validates all scenes currently open
 		/// </summary>
-		[MenuItem("Tools/EditorValidation/Validate Open Scenes", priority = 3)]
+		[MenuItem("EditorValidation/Validate Open Scenes", priority = 3)]
 		public static void ValidateOpenScenes()
 		{
 			int failedValidations = 0;
@@ -86,7 +86,7 @@ namespace EditorAttributes.Editor
 		/// <summary>
 		/// Validates all assets in the project
 		/// </summary>
-		[MenuItem("Tools/EditorValidation/Validate Assets", priority = 1)]
+		[MenuItem("EditorValidation/Validate Assets", priority = 1)]
 		public static void ValidateAllAssets()
 		{
 			int failedValidations = 0;

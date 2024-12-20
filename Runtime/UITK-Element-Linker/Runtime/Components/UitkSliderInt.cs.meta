@@ -13,6 +13,6 @@ AssetOrigin:
   serializedVersion: 1
   productId: 282751
   packageName: UI Toolkit Element Linker
-  packageVersion: 2.0.0
-  assetPath: Assets/D.A. Assets/UITK-Element-Linker/Runtime/Components/UitkSliderInt.cs
-  uploadId: 706130
+  packageVersion: 2.0.1
+  assetPath: Assets/Plugins/_EditorTools/Runtime/UITK-Element-Linker/Runtime/Components/UitkSliderInt.cs
+  uploadId: 716405

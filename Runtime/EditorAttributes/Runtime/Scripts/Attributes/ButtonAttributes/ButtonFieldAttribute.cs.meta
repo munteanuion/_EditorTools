@@ -13,6 +13,6 @@ AssetOrigin:
   serializedVersion: 1
   productId: 269285
   packageName: EditorAttributes
-  packageVersion: 2.5.0
+  packageVersion: 2.5.1
   assetPath: Assets/Plugins/_EditorTools/Runtime/EditorAttributes/Runtime/Scripts/Attributes/ButtonAttributes/ButtonFieldAttribute.cs
-  uploadId: 710985
+  uploadId: 718676
